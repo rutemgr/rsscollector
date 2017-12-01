@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>rsscollector</title>
+	
+	
+	<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection">
+	<script src="javascript/angularjs/angular.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	
+	<!--ANGULARJS FILES-->
+	<script src="javascript/angularjs/app.js"></script>
+	<script src="javascript/angularjs/controllers/MainController.js"></script>
+	<script src="javascript/angularjs/services/ApiService.js"></script>
+
+</head>
+<body ng-app="rsscollector" ng-controller="MainController">
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">RSS Collector</a>
+    </div>
+  </nav>
+	<div class="container">
+		<div class="row" style="margin: 20px;">
+			<div class="col s10">
+				<input placeholder="Add new RSS feed" type="text" name="new_rss_url">
+			</div>
+			<div class="col s2">
+				<a class="waves-effect waves-light btn">add</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row" style="margin: 20px">
+		<div class="col s4" style="padding: 10px;" ng-repeat="x in rssData">
+			<div class="card blue-grey darken-1" >
+				<div class="card-content white-text">
+					<span class="card-title">{{x.name}}</span>
+					<div ng-repeat="i in x.content">
+						<a href="{{i.link}}" class="collection-item">{{i.title}}</a>
+					</div>
+				</div>
+				<div class="card-action">
+					<a href="#">This is a link</a>
+					<a href="#">This is a link</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<p>{{rssData}}</p>
+	
+</body>
+</html>

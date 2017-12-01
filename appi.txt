@@ -1,0 +1,9 @@
+nodejs backend
+expressill‰ API
+
+otetaan vastaan RSS-feed-osoitteita ja lis‰t‰‰n ne listaan
+
+Haetaan rss-to-jsonilla RSS feedej‰, palautetaan objekti jossa "Title" + object array jossa linkkej‰ & otsikoita
+res.send({"Rutemgr uutiset", [{name: "Javascript is gud", link: "http://rutemgr.com/news/jscript-gud"}, {}, {}]}
+
+async library joka hakee kaikista urleista
